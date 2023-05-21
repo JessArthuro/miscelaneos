@@ -1,0 +1,44 @@
+<h4 class="mt-4 mb-3 text-primary">[ngClass]</h4>
+
+<div [ngClass]="alerta" class="alert" role="alert">
+  A simple success alert—check it out!
+</div>
+
+<button class="btn btn-info me-2" (click)="alerta = 'alert-info'">Info</button>
+<button class="btn btn-success" (click)="alerta = 'alert-success'">
+  Success
+</button>
+<br /><br />
+
+<h3
+  [ngClass]="{
+    'text-warning': propiedades['color'],
+    'text-dark': !propiedades['color']
+  }"
+>
+  Hola Mundo
+</h3>
+
+<button
+  class="btn"
+  (click)="propiedades['color'] = !propiedades['color']"
+  [ngClass]="{
+    'btn-warning': propiedades['color'],
+    'btn-dark': !propiedades['color']
+  }"
+>
+  Cambiar
+</button>
+
+<br />
+<br />
+<h3>Proceso asincrono</h3>
+
+<button class="btn btn-primary" (click)="ejecutar()" [disabled]="loading">
+  <i
+    class="fa"
+    [ngClass]="{ 'fa-save': !loading, 'fa-refresh fa-spin': loading }"
+  ></i>
+  <span *ngIf="!loading"> Guardar cambios</span>
+  <span *ngIf="loading"> Espere por favor...</span>
+</button>

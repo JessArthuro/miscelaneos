@@ -1,0 +1,16 @@
+<h4 class="mt-4 text-primary">
+  [ngStyle]
+  <small class="text-secondary fw-lighter fs-5"
+    >y su uso con directivas de atributos.</small
+  >
+</h4>
+
+<p [style.fontSize.px]="size">
+  Presiona los botones + y - para aumentar o disminuir el tamaño de este texto.
+</p>
+<button class="btn btn-outline-primary me-2 btn-sm" (click)="size = size + 2">
+  <i class="fas fa-plus"></i>
+</button>
+<button class="btn btn-outline-primary btn-sm" (click)="size = size - 2">
+  <i class="fas fa-minus"></i>
+</button>
